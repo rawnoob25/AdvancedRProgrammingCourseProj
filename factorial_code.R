@@ -93,11 +93,12 @@ benchMarking<-function(n){
 bench<-function(){
   if(!dir.exists("output"))dir.create("output")
   op<-"output"
-  
+  sink(file.path(op,"factorial_output.txt"),append=T)
   vals<-c(5,10,50,100,150)
   for(i in vals){
     cat("n:",i,"\n")
     benchMarking(i)%>%print
     cat("-------------------------","\n")
   }
+  sink()
 }
