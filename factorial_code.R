@@ -13,6 +13,10 @@
     install.packages("microbenchmark")
     library(microbenchmark)
   }
+  if(!require(dplyr)){
+    install.packages("dplyr")
+    library(dplyr)
+  }
 }
 
 #loop function
